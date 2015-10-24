@@ -1,0 +1,60 @@
+.iconoLista{
+	margin: 8pt;
+	border-radius: 45% !important;
+}
+.flotante {
+	border-radius: 50%;
+	position:fixed;
+	bottom:20pt;
+	right: 15pt;
+	box-shadow: 2pt 2pt 5pt #9E9E9E;
+}
+
+.imagenPersona {
+	float: left;
+	border-style: solid;
+  border-width: 2pt;
+	border-color: #9E9E9E;
+	border-radius: 5pt;
+	margin-left: 5pt;
+	margin-right: 20pt;
+}
+.datosPersona {
+	float: center;
+	align-self: center;
+}
+
+.textoCorreo {
+	margin-left: 5pt
+}
+.imagenCorreo {
+	float: right;
+	padding: 6pt;
+}
+
+.textoTelefono {
+	margin-left: 5pt;
+}
+.imagenTelefono {
+	float: right;
+	padding: 6pt;
+}
+
+.listaJuegos {
+	margin-left: 5pt;
+}
+
+.imagenFoto{
+	float: right;
+	padding: 6pt;
+	position: relative;
+	top: 70%;
+	right: 5%;
+}
+.listaIzq {
+	float: left;
+}
+
+.listaDer {
+	float: right;
+}

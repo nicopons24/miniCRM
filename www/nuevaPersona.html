@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- Hojas de estilo personalizado -->
+        <link rel="stylesheet" type="text/css" href="./themes/juegosCRM.min.css" />
+        <link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="./jquery/jquery.mobile.structure-1.4.5.min.css" />
+        <!-- Estilos por defecto -->
+        <link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/index.css" />
+        <link rel="stylesheet" type="text/css" href="./css/personalizado.css" />
+        <title>CRM Juegos</title>
+    </head>
+    <body>
+    	<div data-role="page" id="persona" data-title="CRM Juegos">
+            <div data-role="header" data-position="fixed">
+                <h1>Juegos CRM</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                <img src="./img/user-big.png" class="imagenPersona">
+                <img src="./img/camera.png" class="imagenFoto">
+                </div>
+                <hr width="100%" align="center">
+                <div class="ui-field-contain">
+                    <h2>Datos</h2>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="text" name="rol" id="rol" placeholder="Rol">
+                    <input type="text" name="edad" id="edad" placeholder="Edad">
+                    <input type="text" name="localidad" id="localidad" placeholder="Localidad">
+                    <hr width="100%" align="center">
+                    <h2>Juegos preferidos</h2>
+                    <fieldset>
+                      <div class="listaIzq">
+                          <input type="checkbox" name="juegos" id ="accion" value="accion">
+                          <label for="accion">Accion</label>
+                          <input type="checkbox" name="juegos" id ="arcade" value="arcade">
+                          <label for="arcade">Arcade</label>
+                          <input type="checkbox" name="juegos" id ="aventuras" value="aventuras">
+                          <label for="aventuras">Aventuras</label>
+                          <input type="checkbox"name="juegos" id ="carreras" value="carreras">
+                          <label for="carreras">Carreras</label>
+                          <input type="checkbox" name="juegos" id ="casual" value="casual">
+                          <label for="casual">Casual</label>
+                      </div>
+                      <div class="listaDer">
+                          <input type="checkbox" name="juegos" id ="deportes" value="deportes">
+                          <label for="deportes">Deportes</label>
+                          <input type="checkbox" name="juegos" id ="estrategia" value="estrategia">
+                          <label for="estrategia">Estraegia</label>
+                          <input type="checkbox" name="juegos" id ="puzzles" value="puzzles">
+                          <label for="puzzles">Puzzles</label>
+                          <input type="checkbox"name="juegos" id ="rol" value="rol">
+                          <label for="rol">Rol</label>
+                          <input type="checkbox" name="juegos" id ="varios" value="varios">
+                          <label for="varios">Varios</label>
+                      </div>
+                  </fieldset>
+                  <hr width="100%" align="center">
+                  <input type="submit" value="Guardar" data-icon="check"/>
+                </div>
+            </div>
+        <div>
+        <!-- ScriptsJquery y JqueryMobile -->
+        <script type="text/javascript" src="./jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="./jquery/jquery.mobile-1.4.5.min.js"></script>
+        <!-- Scrips por efecto -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
+        <script type="text/javascript"></script>
+    </body>
+</html>
