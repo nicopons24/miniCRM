@@ -14,7 +14,7 @@
     <!-- PLUGINS -->
     <plugin name="cordova-plugin-whitelist" version="1" />
     <plugin name="cordova-plugin-dialogs"/>
-    <plugin name="cordova-plugin-devide"/>
+    <plugin name="cordova-plugin-device"/>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
