@@ -5,19 +5,17 @@ var confDB = {
     existDB = window.localStorage.getItem("exist_db");
     if (existDB==null) {
       // pregunta al usuario
-      navigator.notification.confirm(
+      navigator.notification.alert(
         "La BBDD no existe",  // mensage
         this.onConfirm,       // evento de accion
-        "Data Base",          // titulo
-        ["Salir", "Crear"]    // opciones
+        "Database",           // titulo
+        "Aceptar"             // opciones
       );
     }
   },
 
-  onConfirm:function (buttonIndex) {
-    if (buttonIndex == 2) {
-      window.localStorage.setItem("exist_db", true);
-    }
+  onConfirm:function () {
+    window.localStorage.setItem("exist_db")
   }
 
 };
