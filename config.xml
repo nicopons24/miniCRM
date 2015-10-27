@@ -10,7 +10,6 @@
     <content src="index.html" />
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="false" />
-    <preference name="android-minSdkVersion" value="21" />
     <!-- PLUGINS -->
     <plugin name="cordova-plugin-whitelist" version="1" />
     <plugin name="cordova-plugin-dialogs"/>
