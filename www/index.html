@@ -6,13 +6,13 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <!-- Hojas de estilo personalizado -->
-        <link rel="stylesheet" type="text/css" href="./themes/juegosCRM.min.css" />
-        <link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.icons.min.css" />
-        <link rel="stylesheet" type="text/css" href="./jquery/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="themes/juegosCRM.min.css" />
+        <link rel="stylesheet" type="text/css" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile.structure-1.4.5.min.css" />
         <!-- Estilos por defecto -->
-        <link rel="stylesheet" type="text/css" href="./jquery/jquery.mobile.icons-1.4.5.min.css" />
-        <link rel="stylesheet" type="text/css" href="./css/index.css" />
-        <link rel="stylesheet" type="text/css" href="./css/personalizado.css" />
+        <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile.icons-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/personalizado.css" />
         <title>CRM Juegos</title>
     </head>
     <body>
@@ -21,21 +21,52 @@
             <h1>Juegos CRM</h1>
           </div>
           <div data-role="content" id="lista_personas">
-            <img id="buttonAdd" src="./img/add.png" class="flotante" >
+            <img id="buttonAdd" src="img/add.png" class="flotante" >
             <ul data-role="listview" data-autodividers="true">
-                <li><a href="datosPersona.html">
-                    <img src="./img/user.png" class="iconoLista"/>
-                    <div>
-                        <h2>Persona Uno</h2>
-                        <p>Estudiante</p>
-                    </div>
-                </a></li>
             </ul>
           </div>
         </div>
+        <div data-role="page" id="persona" data-title="CRM Juegos">
+              <div data-role="header" data-position="fixed">
+                  <h1>Juegos CRM</h1>
+              </div>
+              <div data-role="content" id="datos_personas">
+                <img src="img/edit.png" id="buttonEdit" class="flotante">
+                  <div>
+                  <img src="img/user-big.png" class="imagenPersona">
+                  <div class="datosPersona" id="datos">
+                      <h2>Nombre</h2>
+                      <p>Rol</p>
+                      <p>Ciudad</p>
+                      <p>Edad</p>
+                  </div>
+                  </div>
+                  <hr width="100%" align="center">
+                  <div>
+                      <img src="img/mail.png" class="imagenCorreo"/>
+                      <div class="textoCorreo">
+                          <h3>Correo electronico</h3>
+                          <p>correo@example.com</p>
+                      </div>
+                  </div>
+                  <hr width="100%" align="center">
+                  <div>
+                      <img src="img/phone.png" class="imagenTelefono"/>
+                      <div class="textoTelefono">
+                          <h3>Telefono</h3>
+                          <p>123456789</p>
+                      </div>
+                  </div>
+                  <hr width="100%" align="center">
+                  <div class="listaJuegos">
+                      <h3>Juegos Preferidos</h3>
+                      <p>arcade, accion, aventura, carreras, rol</p>
+                  </div>
+              </div>
+          <div>
         <!-- ScriptsJquery y JqueryMobile -->
-        <script type="text/javascript" src="./jquery/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" src="./jquery/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery.mobile-1.4.5.min.js"></script>
         <!-- Scrips por efecto -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
