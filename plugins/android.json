@@ -19,10 +19,6 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -37,9 +33,6 @@
             "PACKAGE_NAME": "com.crm.juegos"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.crm.juegos"
-        },
-        "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.crm.juegos"
         }
     },

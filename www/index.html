@@ -31,39 +31,82 @@
                   <h1>Juegos CRM</h1>
               </div>
               <div data-role="content" id="datos_personas">
-                <img src="img/edit.png" id="buttonEdit" class="flotante">
                   <div>
                   <img src="img/user-big.png" class="imagenPersona">
                   <div class="datosPersona" id="datos">
-                      <h2>Nombre</h2>
-                      <p>Rol</p>
-                      <p>Ciudad</p>
-                      <p>Edad</p>
                   </div>
                   </div>
                   <hr width="100%" align="center">
                   <div>
                       <img src="img/mail.png" class="imagenCorreo"/>
-                      <div class="textoCorreo">
+                      <div class="textoCorreo" id="correo">
                           <h3>Correo electronico</h3>
-                          <p>correo@example.com</p>
                       </div>
                   </div>
                   <hr width="100%" align="center">
                   <div>
                       <img src="img/phone.png" class="imagenTelefono"/>
-                      <div class="textoTelefono">
+                      <div class="textoTelefono" id="telefono">
                           <h3>Telefono</h3>
-                          <p>123456789</p>
                       </div>
                   </div>
                   <hr width="100%" align="center">
-                  <div class="listaJuegos">
+                  <div class="listaJuegos" id="juegos">
                       <h3>Juegos Preferidos</h3>
-                      <p>arcade, accion, aventura, carreras, rol</p>
                   </div>
               </div>
-          <div>
+        </div>
+        <div data-role="page" id="nuevo" data-title="CRM Juegos">
+              <div data-role="header" data-position="fixed">
+                  <h1>Juegos CRM</h1>
+              </div>
+              <div data-role="content">
+                  <div>
+                  <img src="img/user-big.png" class="imagenPersona">
+                  <img src="img/camera.png" class="imagenFoto">
+                  </div>
+                  <hr width="100%" align="center">
+                  <div class="ui-field-contain">
+                      <h2>Datos</h2>
+                      <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                      <input type="text" name="rol" id="rol" placeholder="Rol">
+                      <input type="number" name="edad" id="edad" placeholder="Edad" min="1" max="99">
+                      <input type="text" name="localidad" id="localidad" placeholder="Localidad">
+                      <input type="email" name="email" id="email" placeholder="E-mail">
+                      <input type="tel" name="telefono" id="telefono" placeholder="Telefono">
+                      <hr width="100%" align="center">
+                      <h2>Juegos preferidos</h2>
+                      <fieldset>
+                        <div class="listaIzq">
+                            <input type="checkbox" name="juegos" id ="accion" value="accion">
+                            <label for="accion">Accion</label>
+                            <input type="checkbox" name="juegos" id ="arcade" value="arcade">
+                            <label for="arcade">Arcade</label>
+                            <input type="checkbox" name="juegos" id ="aventuras" value="aventuras">
+                            <label for="aventuras">Aventuras</label>
+                            <input type="checkbox"name="juegos" id ="carreras" value="carreras">
+                            <label for="carreras">Carreras</label>
+                            <input type="checkbox" name="juegos" id ="casual" value="casual">
+                            <label for="casual">Casual</label>
+                        </div>
+                        <div class="listaDer">
+                            <input type="checkbox" name="juegos" id ="deportes" value="deportes">
+                            <label for="deportes">Deportes</label>
+                            <input type="checkbox" name="juegos" id ="estrategia" value="estrategia">
+                            <label for="estrategia">Estraegia</label>
+                            <input type="checkbox" name="juegos" id ="puzzles" value="puzzles">
+                            <label for="puzzles">Puzzles</label>
+                            <input type="checkbox"name="juegos" id ="rol" value="rol">
+                            <label for="rol">Rol</label>
+                            <input type="checkbox" name="juegos" id ="varios" value="varios">
+                            <label for="varios">Varios</label>
+                        </div>
+                    </fieldset>
+                    <hr width="100%" align="center">
+                    <input type="submit" value="Guardar" data-icon="check"/>
+                  </div>
+              </div>
+          </div>
         <!-- ScriptsJquery y JqueryMobile -->
         <script type="text/javascript" src="jquery/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="jquery/jquery.mobile-1.4.5.min.js"></script>

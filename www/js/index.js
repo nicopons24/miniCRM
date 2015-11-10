@@ -20,7 +20,6 @@ var app = {
     receivedEvent: function(id) {
       // añadir los eventos a los iconos flotantes
         document.getElementById("buttonAdd").addEventListener("click", clickNewPersona);
-        document.getElementById("buttonEdit").addEventListener("click", clickEditPersona);
 
         createDB.initialize(); // comprobacion DDBB
 
@@ -51,11 +50,11 @@ var createDB = {
 
   dbCreate:function(tx) {
     var persona = "CREATE TABLE IF NOT EXISTS persona (idpersona INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre VARCHAR(32) NOT NULL, apellidos VARCHAR(128) NOT NULL, edad INTEGER NOT NULL, "+
-    "ciudad VARCHAR(64) NOT NULL, rol VARCHAR(64) NOT NULL, email VARCHAR(64) NOT NULL, juegos VARCHAR(512));";
+    "ciudad VARCHAR(64) NOT NULL, rol VARCHAR(64) NOT NULL, email VARCHAR(64) NOT NULL, telefono INTEGER NOT NULL, juegos VARCHAR(512));";
     tx.executeSql(persona);
     console.log("tabla persona creada");
 
-    var insert = "INSERT INTO persona(nombre, apellidos, edad, ciudad, rol, email, juegos) VALUES('pepet', 'guapo', 16, 'Valencia', 'Estudiante', 'pepetelguapet@gmail.com', 'accion, aventuras, deportes, rol')"
+    var insert = "INSERT INTO persona(nombre, apellidos, edad, ciudad, rol, email, telefono, juegos) VALUES('pepet', 'guapo', 16, 'Valencia', 'Estudiante', 'pepetelguapet@gmail.com', 684201897, 'accion, aventuras, deportes, rol')"
     tx.executeSql(insert);
     console.log("pepet insertado");
     window.localStorage.setItem("exist_db", true);
@@ -74,6 +73,7 @@ var createDB = {
 // recuperacion e insercion de datos
 var useDB = {
   db:"",
+  consultaId:"",
   initialize: function() {
     this.db = window.openDatabase("crmDB", "1.0", "miniCRM Database", 2*(1024*1024));
     this.db.transaction(this.rellenaLista, this.dbLoadError);
@@ -90,7 +90,6 @@ var useDB = {
             console.log("leyendo consulta");
             for (var i = 0; i < rows; i++) {
               var persona = result.rows.item(i);
-              console.log(persona);
               $("#lista_personas ul").append(
                 "<li data-id='"+persona.idpersona+"'><a href='#persona'><img src='./img/user.png' class='iconoLista'/>"+
                 "<div><h2>"+persona.nombre+"</h2><p>"+persona.rol+"</p></div></a></li>"
@@ -104,24 +103,44 @@ var useDB = {
     );
   },
 
-  consultaDatos: function(id) {
-    this.db.transaction(function(id){
-      //consulta persona por id
-    }, this.dbLoadError);
-  }
+  consultaDatos: function(idpersona) {
+    this.consultaId = idpersona;
+    console.log("consultaId = "+this.consultaId);
+    this.db.transaction(this.rellenaUsuario, this.dbLoadError);
+  },
+
+  rellenaUsuario: function(tx) {
+    var sql = "SELECT * FROM persona WHERE idpersona = "+useDB.consultaId+";";
+    tx.executeSql(sql, [],
+      function(tx,result) {
+        var rows = result.rows.length;
+        console.log(rows);
+          if (rows > 0) {
+            console.log("leyendo consulta");
+            var persona = result.rows.item(0);
+            $("#datos").append("<h2>"+persona.nombre+" "+persona.apellidos+"</h2><p>"+persona.rol+"</p><p>"+
+            persona.ciudad+"</p><p>"+persona.edad+" años </p>");
+            $('#correo').append("<p>"+persona.email+"<p>");
+            $('#telefono').append("<p>"+persona.telefono+"<p>");
+            $('#juegos').append("<p>"+persona.juegos+"<p>");
+          }
+      },
+      function(tx,e) { console.log("error en la consulta n: "+e.code); }
+    );
+  },
 
   dbLoadError:function(e) {
     console.log("Error al cargar la BBDD: "+e.code);
   }
-}
+};
+
 function muestraPersona() {
   var id = $(this).parent().attr("data-id");
   useDB.consultaDatos(id);
-}
+};
+
 function clickNewPersona() {
-  location.href="nuevaPersona.html";
+  location.href="#nuevo";
 };
-function clickEditPersona() {
-  location.href="nuevaPersona.html";
-};
+
 app.initialize();
